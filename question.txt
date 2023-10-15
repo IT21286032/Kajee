@@ -1,0 +1,82 @@
+Duration: 2 hours
+
+Objective: The objective of this practical assignment is to implement a deep learning model using TensorFlow to predict next characters for a sequence of characters. By the end of this assignment, students should have a better understanding of how to develop a model to generate reasonable text sequences for a given text dataset using TensorFlow.
+
+Requirements:
+
+Python installed on your system (preferably Python 3.x).
+TensorFlow installed (you can install it using pip: pip install tensorflow).
+Basic knowledge of Python, pandas, and neural networks.
+Dataset: For this assignment, you must use the given dataset.
+
+Link to Access dataset:
+
+https://github.com/lakminia/Seq_dataset/blob/main/Sequential_Dataset.txt
+
+Your task is to generate number of characters for a given text data according to specified requirements as below.
+
+Task Description:
+
+Data Preparation (20 points):
+·         Load the dataset.
+
+·         Evaluate the characteristics of the dataset.
+
+·         Prepare inputs and outputs in appropriate format to feed the model.
+
+Model Design (25 points):
+·         Implement a model using TensorFlow's to generate next characters for a sequence of 20 characters.
+
+·         Choose an appropriate loss function and optimizer.
+
+Training (20 points):
+·         Train your model using character sequences implemented above with 15 epochs and 150 batch sizes.
+
+Evaluation (15 points):
+·         Choose 5th training record of the model to do the prediction.
+
+·         For the selected record, predict its next 5 characters and after that, print whole sequence.
+
+Hyperparameter Tuning (5 points):
+·         Experiment with hyperparameters (e.g., epochs, batch size) to improve model performance.
+
+·         Report the best set of hyperparameters and their impact on accuracy in the report.
+
+Presentation and Documentation (15 points):
+·         Include code comments and explanations for clarity in the Jupyter Notebook.
+
+·         Prepare a brief report (word document) indicating followings
+
+                                - first 10 training dataset for the model and thier respective outputs.
+
+                                - results of the prection
+
+                                - mention your findings, challenges faced, and lessons learned.
+
+Submission:
+
+Create a folder. The folder name should have your SLIIT registration number.
+
+e.g.  ITXXXXXXX
+
+Rename Jupyter notebook as
+
+ 
+
+                ITXXXXXXX_model.ipynb
+
+ 
+
+Rename your brief report (word document) as ITXXXXXXX_summary
+
+Place the report (word document) and  Jupyter notebook inside the created folder
+
+Finally zip the main folder and upload it to the given link given in the NetExam.
+
+                Note: You are allowed to upload only 1 folder.
+
+Ensure that your code is well-commented, organized, and the report is clear and concise.
+
+Plagiarism Rules:
+
+If your code matches (more than 50%) with another student’s code, all those students whose codes match will be awarded with zero marks without any evaluation.
