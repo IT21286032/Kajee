@@ -1,0 +1,52 @@
+The outer most layer of Earth is often referred to as the biosphere. The biosphere is the layer of living organisms that cover the surface of the planet and it readily distinguishes the planet from all others in the solar system ("Biosphere", 2003). Due to its flowing water and oxygen, Earth is the only planet in the galaxy that is naturally habitable by humans. It is estimated that life has existed on Earth for 3.5 to 4 billion years.
+...
+Fourth and finally is the process of erosion. Erosion i...
+
+
+# Create character-to-index and index-to-character mappings
+chars = sorted(list(set(text_data)))
+char_to_index = dict((c, i) for i, c in enumerate(chars))
+index_to_char = dict((i, c) for i, c in enumerate(chars))
+
+# Define sequence length and prepare inputs and outputs
+SEQUENCE_LENGTH = 20
+inputs = []
+outputs = []
+
+for i in range(0, len(text_data) - SEQUENCE_LENGTH):
+    sequence_in = text_data[i:i + SEQUENCE_LENGTH]
+    sequence_out = text_data[i + SEQUENCE_LENGTH]
+    inputs.append([char_to_index[char] for char in sequence_in])
+    outputs.append(char_to_index[sequence_out])
+
+# Number of unique characters in the dataset
+num_chars = len(chars)
+
+num_chars, len(inputs)
+
+
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense, Dropout
+from tensorflow.keras.utils import to_categorical
+
+# Convert inputs and outputs to numpy arrays and reshape for model input
+X = np.reshape(inputs, (len(inputs), SEQUENCE_LENGTH, 1))
+X = X / float(num_chars)  # Normalize
+y = to_categorical(outputs)
+
+# Build the LSTM model
+model = Sequential()
+model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
+model.add(Dropout(0.2))
+model.add(LSTM(256))
+model.add(Dropout(0.2))
+model.add(Dense(num_chars, activation='softmax'))
+
+# Compile the model with appropriate loss function and optimizer
+model.compile(loss='categorical_crossentropy', optimizer='adam')
+
+model.summary()
+
+
